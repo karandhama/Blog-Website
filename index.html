@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog</title>
+        <link rel="stylesheet" type="text/css" href="Css/index.css">
+        <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="JavaScript/validation1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#down").click(function(){
+                $('body,html').animate({ scrollTop: $('#main2').height() }, 1000);
+            });
+        });
+    </script>
+    <body>
+        <div class="container">
+            <div class="video-container">
+                <video autoplay loop class="fillWidth">
+                    <source src="Video/Workaholic.mp4" type="video/mp4">
+                    <source src="Video/Workaholic.mp4" type="video/webm">
+                </video>
+            </div>
+            <div class="header1">
+                <h1>Blogger</h1>
+                <div id="upper_heading1">
+                    <ul id="navigation1">
+                        <li><i class="fa fa-sign-in color" aria-hidden="true"></i>&emsp;<a href="login.php">Sign In</a></li>
+                        <li><i class="fa fa-user color" aria-hidden="true"></i>&emsp;<a href="login.php">Register</a></li>
+                        <li><i class="fa fa-line-chart color" aria-hidden="true"></i>&emsp;<a href="trending.php">Trending Blogs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main1">
+                <h1>Publish Your ideas, new thoughts and experiences</h1>
+                <h3>Create a unique and brautiful blog. It's easy and free</h3>
+                <div id="scroll_down">
+                    <i class="fa fa-angle-down fa-5x" aria-hidden="true" id="down"></i>
+                </div>
+            </div>
+            <div id="main2">
+                <img src="images1.jpg">
+                <div id="right">
+                    <div id="text">
+                        <h1>
+                        Explore blogs, <br> give your valuable <br>reviews and likes. <br><br>" No need to Sign In "
+                        </h1>
+                    </div>
+                    <button id="start" onclick="window.location.href='authors.php'">Explore Blogs</button>
+                </div>
+            </div>
+            <footer class="footer">
+                <h3>&#169; 2017 U15CO033</h3>
+            </footer>
+        </div>
+    </body>
+</html>
