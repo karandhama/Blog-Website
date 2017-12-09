@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notification</title>
+    <link rel="stylesheet" type="text/css" href="Css/createblog.css">
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<body>
+    <div class="container">
+        <div class="header">
+            <div id="title1">
+                <h1>Notifications</h1>
+            </div>
+        </div>
+    </div>
+    <div class="main1">
+        <h2>Comments :</h2>
+        <ul id="dropdown_content1"></ul>
+        <h2>Likes :</h2>
+        <ul id="dropdown_content2"></ul>
+        <h2>Friend's new Blogs :</h2>
+        <ul id="dropdown_content3"></ul>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function(){
+        function load_unseen_comments(status){
+            $.ajax({
+                url:"notification.php",
+                method:"POST",
+                data:{view:status},
+                dataType:"json",
+                success:function(data){
+                    $('#dropdown_content1').html(data.comment_notification);
+                    $('#dropdown_content2').html(data.like_notification);
+                    $('#dropdown_content3').html(data.follow_notification);
+                }
+            });
+        }
+        load_unseen_comments(0);
+    });
+</script>
